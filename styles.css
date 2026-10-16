@@ -186,4 +186,42 @@ footer {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     .grid-beneficios { grid-template-columns: 1fr; }
+}/* BOTÓN FLOTANTE */
+.btn-flotante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #8a7a6a;
+    color: #fff;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    z-index: 1000;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.btn-flotante:hover {
+    background-color: #6d5f52;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Ajuste responsive para móvil */
+@media (max-width: 600px) {
+    .btn-flotante {
+        bottom: 16px;
+        right: 16px;
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
 }
